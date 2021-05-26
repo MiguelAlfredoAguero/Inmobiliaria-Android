@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#25446A"
+    tools:context=".ui.MainActivity">
+
+
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:lineSpacingExtra="8sp"
+        android:text="Inmobiliaria La Punta"
+        android:textColor="#DFE2CF"
+        android:textColorHighlight="#00587A"
+        android:textSize="30sp"
+        android:typeface="monospace"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv" />
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="269dp"
+        android:layout_height="216dp"
+        android:layout_margin="10dp"
+        android:padding="5dp"
+        android:src="@drawable/inmobiliaria"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etUsuario"
+        android:layout_width="307dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="8dp"
+        android:drawableLeft="@drawable/mail"
+        android:ems="10"
+        android:focusable="true"
+        android:fontFamily="sans-serif-light"
+        android:hint="Ingrese Email"
+        android:inputType="textPersonName"
+        android:selectAllOnFocus="false"
+        android:text="galileo@hotmail.com"
+        android:textColor="#FFFF"
+        android:textColorHighlight="#DFE2CF"
+        android:textColorHint="#E7EAEA"
+        android:textColorLink="#FFFF"
+        android:typeface="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitulo" />
+
+    <EditText
+        android:id="@+id/etContrasena"
+        android:layout_width="307dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="4dp"
+        android:drawableLeft="@drawable/contrasena"
+        android:ems="10"
+        android:fontFamily="sans-serif-light"
+        android:hint="Ingrese Clave"
+        android:inputType="textPassword"
+        android:text="12345678"
+        android:textColor="#FFFF"
+        android:textColorHighlight="#DFE2CF"
+        android:textColorHint="#E7EAEA"
+        android:textColorLink="#FFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etUsuario" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="306dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#CE5B3B"
+        android:text=" Iniciar Sesión"
+        android:textColor="#ffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etContrasena" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

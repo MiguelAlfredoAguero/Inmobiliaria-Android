@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvCodigoPago"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.975"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvNumeroPago"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.98"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCodigoPago" />
+
+    <TextView
+        android:id="@+id/tvImportePago"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.985"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCodigoContratoPago" />
+
+    <TextView
+        android:id="@+id/tvFechaPago"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.985"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvImportePago" />
+
+    <TextView
+        android:id="@+id/tvCodigoContratoPago"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.985"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNumeroPago" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="36dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Codigo Pago"
+        android:textColor="#FFFFFF"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/tvCodigoPago"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Numero Pago"
+        android:textColor="#FFFFFF"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/tvNumeroPago"
+        app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Codigo Contrato"
+        android:textColor="#FFFFFF"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/tvCodigoContratoPago"
+        app:layout_constraintTop_toBottomOf="@+id/textView26" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="44dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Importe"
+        android:textColor="#FFFFFF"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/tvImportePago"
+        app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="56dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Fecha"
+        android:textColor="#FFFFFF"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/tvFechaPago"
+        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

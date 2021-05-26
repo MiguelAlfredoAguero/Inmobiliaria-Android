@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_ubicacion">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.plantilla.ui.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_perfil"
+        android:name="com.example.plantilla.ui.ui.perfil.PerfilFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_perfil" />
+
+    <fragment
+        android:id="@+id/nav_ubicacion"
+        android:name="com.example.plantilla.ui.ui.ubicacion.UbicacionFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_ubicacion" />
+    <fragment
+        android:id="@+id/inmueblesFragment"
+        android:name="com.example.plantilla.ui.ui.inmuebles.InmueblesFragment"
+        android:label="Inmuebles"
+        tools:layout="@layout/fragment_inmuebles" >
+        <action
+            android:id="@+id/action_inmueblesFragment_to_detalleInmuebleFragment"
+            app:destination="@id/detalleInmuebleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalleInmuebleFragment"
+        android:name="com.example.plantilla.ui.ui.inmuebles.DetalleInmuebleFragment"
+        android:label="Detalle del Inmueble"
+        tools:layout="@layout/fragment_detalle_inmueble" >
+        <action
+            android:id="@+id/action_detalleInmuebleFragment_to_inmueblesFragment"
+            app:destination="@id/inmueblesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/inquilinosFragment"
+        android:name="com.example.plantilla.ui.ui.inquilinos.InquilinosFragment"
+        android:label="Inmuebles alquilados"
+        tools:layout="@layout/fragment_inquilinos" >
+        <action
+            android:id="@+id/action_inquilinosFragment_to_detalleInquilinoFragment"
+            app:destination="@id/detalleInquilinoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalleInquilinoFragment"
+        android:name="com.example.plantilla.ui.ui.inquilinos.DetalleInquilinoFragment"
+        android:label="Detalles del inquilino"
+        tools:layout="@layout/fragment_detalle_inquilino" >
+        <action
+            android:id="@+id/action_detalleInquilinoFragment_to_inquilinosFragment"
+            app:destination="@id/inquilinosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contratosVigentesFragment"
+        android:name="com.example.plantilla.ui.ui.contratos.ContratosVigentesFragment"
+        android:label="Contratos vigentes"
+        tools:layout="@layout/fragment_contratos_vigentes" >
+        <action
+            android:id="@+id/action_contratosVigentesFragment_to_detalleContratoFragment"
+            app:destination="@id/detalleContratoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalleContratoFragment"
+        android:name="com.example.plantilla.ui.ui.contratos.DetalleContratoFragment"
+        android:label="Detalle Contrato"
+        tools:layout="@layout/fragment_detalle_contrato" >
+        <action
+            android:id="@+id/action_detalleContratoFragment_to_contratosVigentesFragment"
+            app:destination="@id/contratosVigentesFragment" />
+        <action
+            android:id="@+id/action_detalleContratoFragment_to_pagosFragment"
+            app:destination="@id/pagosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pagosFragment"
+        android:name="com.example.plantilla.ui.ui.pagos.PagosFragment"
+        android:label="Pagos"
+        tools:layout="@layout/fragment_pagos" >
+        <action
+            android:id="@+id/action_pagosFragment_to_detalleContratoFragment"
+            app:destination="@id/detalleContratoFragment" />
+    </fragment>
+
+</navigation>
