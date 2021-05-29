@@ -2,6 +2,7 @@ package com.example.plantilla.ui.ui.pagos;
 
 import android.app.Application;
 import android.content.Context;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -36,18 +37,21 @@ public class PagosViewModel extends AndroidViewModel {
     }
 
     public void cargarPagos(int ContratoId) {
+
         Call<List<Pago>> listarPagos = ApiClient.getMyApiClient().listaPagos(ContratoId, ApiClient.obtenerToken(context));
         listarPagos.enqueue(new Callback<List<Pago>>() {
             @Override
             public void onResponse(Call<List<Pago>> call, Response<List<Pago>> response) {
                 if ( response.isSuccessful() ) {
                     listaPagosMutable.setValue(response.body());
+                } else {
+                    Log.d("msj", "Pagos NO encontrados ");
                 }
             }
 
             @Override
             public void onFailure(Call<List<Pago>> call, Throwable t) {
-
+                Log.d("msj", "OCURRIO UN ERROR");
             }
         });
 

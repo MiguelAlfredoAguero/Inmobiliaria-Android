@@ -1,5 +1,8 @@
 package com.example.plantilla.modelo;
 
+import com.example.plantilla.modelo.auxiliar.TipoInmueble;
+import com.example.plantilla.modelo.auxiliar.UsoInmueble;
+
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -7,8 +10,8 @@ public class Inmueble implements Serializable {
 
     private int id;
     private String direccion;
-    private String usoInmueble;
-    private String tipoInmueble;
+    private UsoInmueble usoInmueble;
+    private TipoInmueble tipoInmueble;
     private int ambientes;
     private double precio;
     private Propietario propietario;
@@ -16,7 +19,7 @@ public class Inmueble implements Serializable {
     private boolean disponible;
     private String avatar;
 
-    public Inmueble(int id, String direccion, String usoInmueble, String tipoInmueble, int ambientes, double precio, Propietario propietario, boolean disponible, String avatar) {
+    public Inmueble(int id, String direccion, UsoInmueble usoInmueble, TipoInmueble tipoInmueble, int ambientes, double precio, Propietario propietario, boolean disponible, String avatar) {
         this.id = id;
         this.direccion = direccion;
         this.usoInmueble = usoInmueble;
@@ -46,19 +49,19 @@ public class Inmueble implements Serializable {
         this.direccion = direccion;
     }
 
-    public String getUsoInmueble() {
+    public UsoInmueble getUsoInmueble() {
         return usoInmueble;
     }
 
-    public void setUsoInmueble(String usoInmueble) {
+    public void setUsoInmueble(UsoInmueble usoInmueble) {
         this.usoInmueble = usoInmueble;
     }
 
-    public String getTipoInmueble() {
+    public TipoInmueble getTipoInmueble() {
         return tipoInmueble;
     }
 
-    public void setTipoInmueble(String tipoInmueble) {
+    public void setTipoInmueble(TipoInmueble tipoInmueble) {
         this.tipoInmueble = tipoInmueble;
     }
 

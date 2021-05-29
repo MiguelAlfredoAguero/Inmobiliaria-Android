@@ -22,7 +22,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class DetalleInquilinoViewModel extends AndroidViewModel {
-    private MutableLiveData<Inquilino> detalleInquilinoMutable;
+    private MutableLiveData<Contrato> detalleInquilinoMutable;
     private Context context;
 
     public DetalleInquilinoViewModel(@NonNull Application application) {
@@ -30,7 +30,7 @@ public class DetalleInquilinoViewModel extends AndroidViewModel {
         context = application.getApplicationContext();
     }
 
-    public LiveData<Inquilino> getDetalleInquilinoMutable() {
+    public LiveData<Contrato> getDetalleInquilinoMutable() {
         if (detalleInquilinoMutable == null) {
             detalleInquilinoMutable = new MutableLiveData<>();
         }
@@ -39,19 +39,19 @@ public class DetalleInquilinoViewModel extends AndroidViewModel {
 
     public void cargarDetalleAlquiler(int contratoId) {
 
-        Call<Inquilino> detalleAlquiler = ApiClient.getMyApiClient().detalleAlquiler(contratoId, ApiClient.obtenerToken(context));
-        detalleAlquiler.enqueue(new Callback<Inquilino>() {
+        Call<Contrato> detalleAlquiler = ApiClient.getMyApiClient().detalleAlquiler(contratoId, ApiClient.obtenerToken(context));
+        detalleAlquiler.enqueue(new Callback<Contrato>() {
             @Override
-            public void onResponse(Call<Inquilino> call, Response<Inquilino> response) {
+            public void onResponse(Call<Contrato> call, Response<Contrato> response) {
                 if ( response.isSuccessful() ) {
-                    detalleInquilinoMutable.setValue(response.body());
+                    detalleInquilinoMutable.postValue(response.body());
                 } else {
                     Log.d("msj", "cargarDetalleAlquiler(): No encontrado.");
                 }
             }
 
             @Override
-            public void onFailure(Call<Inquilino> call, Throwable t) {
+            public void onFailure(Call<Contrato> call, Throwable t) {
                 Log.d("msj", "OCURRIO ALGUN ERROR.");
             }
         });

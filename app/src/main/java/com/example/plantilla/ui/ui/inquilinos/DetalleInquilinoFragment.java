@@ -32,20 +32,20 @@ public class DetalleInquilinoFragment extends Fragment {
 
         int ContratoId = getArguments().getInt("ContratoId");
 
-        detalleInquilinoViewModel.getDetalleInquilinoMutable().observe(getViewLifecycleOwner(), new Observer<Inquilino>() {
+        detalleInquilinoViewModel.getDetalleInquilinoMutable().observe(getViewLifecycleOwner(), new Observer<Contrato>() {
             @Override
-            public void onChanged(Inquilino inquilino) {
+            public void onChanged(Contrato contrato) {
 
-                inquilinoActual = inquilino;
+                //inquilinoActual = inquilino;
 
-                etCodigoInquilino.setText(inquilino.getInquilinoId()+"");
-                etNombreInquilino.setText(inquilino.getNombre());
-                etApellidoInquilino.setText(inquilino.getApellido());
-                etDniInquilino.setText(inquilino.getdni()+"");
-                etEmailInquilino.setText(inquilino.getEmail());
-                etTelefonoInquilino.setText(inquilino.getTelefono());
-                etGarante.setText(inquilino.getGaranteNombre());
-                etTelefonoGarante.setText(inquilino.getGaranteTelefono());
+                etCodigoInquilino.setText(contrato.getId()+"");
+                etNombreInquilino.setText(contrato.getInquilino().getPersona().getNombre());
+                etApellidoInquilino.setText(contrato.getInquilino().getPersona().getApellido());
+                etDniInquilino.setText(contrato.getInquilino().getPersona().getDni()+"");
+                etEmailInquilino.setText(contrato.getInquilino().getPersona().getEmail());
+                etTelefonoInquilino.setText(contrato.getInquilino().getPersona().getTelefono());
+                etGarante.setText(contrato.getGarante().getPersona().getApellido() + contrato.getGarante().getPersona().getNombre());
+                etTelefonoGarante.setText(contrato.getGarante().getPersona().getTelefono());
             }
         });
 

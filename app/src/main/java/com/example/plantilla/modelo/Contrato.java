@@ -1,5 +1,7 @@
 package com.example.plantilla.modelo;
 
+import com.example.plantilla.modelo.auxiliar.Garante;
+
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -11,15 +13,17 @@ public class Contrato implements Serializable {
     private double precio;
     private Inquilino inquilino;
     private Inmueble inmueble;
+    private Garante garante;
 
     public Contrato() {}
-    public Contrato(int id, String desde, String hasta, double precio, Inquilino inquilino, Inmueble inmueble) {
+    public Contrato(int id, String desde, String hasta, double precio, Inquilino inquilino, Inmueble inmueble, Garante garante) {
         this.id = id;
         this.desde = desde;
         this.hasta = hasta;
         this.precio = precio;
         this.inquilino = inquilino;
         this.inmueble = inmueble;
+        this.garante = garante;
     }
 
     public int getId() {
@@ -69,6 +73,14 @@ public class Contrato implements Serializable {
 
     public void setInmueble(Inmueble inmueble) {
         this.inmueble = inmueble;
+    }
+
+    public Garante getGarante() {
+        return garante;
+    }
+
+    public void setGarante(Garante garante) {
+        this.garante = garante;
     }
 
     @Override

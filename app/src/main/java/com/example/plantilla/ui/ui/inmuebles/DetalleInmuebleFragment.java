@@ -53,8 +53,8 @@ public class DetalleInmuebleFragment extends Fragment {
                 etAmbientesInmueble.setText(inmueble.getAmbientes()+"");
                 etDireccionInmueble.setText(inmueble.getDireccion());
                 etPrecioInmueble.setText(inmueble.getPrecio()+"");
-                etUsoInmueble.setText(inmueble.getUsoInmueble());
-                etTipoInmueble.setText(inmueble.getTipoInmueble());
+                etUsoInmueble.setText(inmueble.getUsoInmueble().getNombre());
+                etTipoInmueble.setText(inmueble.getTipoInmueble().getNombre());
 
                 cbDisponibleInmueble.setChecked(inmueble.isDisponible());
 

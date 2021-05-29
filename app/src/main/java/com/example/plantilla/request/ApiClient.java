@@ -6,6 +6,8 @@ import android.util.Log;
 
 import com.example.plantilla.modelo.*;
 import com.example.plantilla.modelo.auxiliar.Persona;
+import com.example.plantilla.modelo.auxiliar.TipoInmueble;
+import com.example.plantilla.modelo.auxiliar.UsoInmueble;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -156,7 +158,7 @@ public Propietario login(String mail, final String password){
     }
 
     private void cargaDatos(){
-
+/*
         //Propietarios
         Propietario juan=new Propietario(1,23492012L,"Juan","Perez","juan@mail.com","123","2664553447", "01/01/2000");
         Propietario sonia=new Propietario(2,17495869L,"Sonia","Lucero","sonia@mail.com","123","266485417", "01/01/2000");
@@ -168,11 +170,11 @@ public Propietario login(String mail, final String password){
         inquilinos.add(mario);
 
         //Inmuebles
-        Inmueble salon=new Inmueble(501,"Colon 340","comercial","salon",2,20000,juan,true,"http://www.secsanluis.com.ar/servicios/salon1.jpg");
-        Inmueble casa=new Inmueble(502,"Mitre 800","particular","casa",2,15000,juan,true,"http://www.secsanluis.com.ar/servicios/casa1.jpg");
-        Inmueble otraCasa=new Inmueble(503,"Salta 325","particular","casa",3,17000,sonia,true,"http://www.secsanluis.com.ar/servicios/casa2.jpg");
-        Inmueble dpto=new Inmueble(504,"Lavalle 450","particular","dpto",2,25000,sonia,true,"http://www.secsanluis.com.ar/servicios/departamento1.jpg");
-        Inmueble casita=new Inmueble(505,"Belgrano 218","particular","casa",5,90000,sonia,true,"http://www.secsanluis.com.ar/servicios/casa3.jpg");
+        Inmueble salon=new Inmueble(501,"Colon 340", new UsoInmueble(0,"comercial"), new TipoInmueble(0,"salon"),2,20000,juan,true,"http://www.secsanluis.com.ar/servicios/salon1.jpg");
+        Inmueble casa=new Inmueble(502,"Mitre 800",new UsoInmueble(0,"particular"),new TipoInmueble(0,"casa"),2,15000,juan,true,"http://www.secsanluis.com.ar/servicios/casa1.jpg");
+        Inmueble otraCasa=new Inmueble(503,"Salta 325",new UsoInmueble(0,"comercial"),new TipoInmueble(0,"casa"),3,17000,sonia,true,"http://www.secsanluis.com.ar/servicios/casa2.jpg");
+        Inmueble dpto=new Inmueble(504,"Lavalle 450",new UsoInmueble(0,"particular"),new TipoInmueble(0,"dpto"),2,25000,sonia,true,"http://www.secsanluis.com.ar/servicios/departamento1.jpg");
+        Inmueble casita=new Inmueble(505,"Belgrano 218",new UsoInmueble(0,"particular"),new TipoInmueble(0,"casa"),5,90000,sonia,true,"http://www.secsanluis.com.ar/servicios/casa3.jpg");
 
         inmuebles.add(salon);
         inmuebles.add(casa);
@@ -187,7 +189,7 @@ public Propietario login(String mail, final String password){
         pagos.add(new Pago(900,1,"10/02/2020",17000, uno));
         pagos.add(new Pago(901,2,"10/03/2020",17000, uno));
         pagos.add(new Pago(902,3,"10/04/2020",17000, uno));
-
+*/
 
     }
 
@@ -254,7 +256,7 @@ public Propietario login(String mail, final String password){
         Call<List<Contrato>> listaAlquileres( @Header("Authorization") String token );
 
         @GET("Inquilino/{id}")
-        Call<Inquilino> detalleAlquiler( @Path("id") int groupId, @Header("Authorization") String token );
+        Call<Contrato> detalleAlquiler( @Path("id") int groupId, @Header("Authorization") String token );
 
 
 
