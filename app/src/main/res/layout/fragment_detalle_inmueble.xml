@@ -14,6 +14,17 @@ android:layout_height="match_parent"
 tools:context=".ui.ui.inmuebles.DetalleInmuebleFragment">
 
 
+    <ImageView
+        android:id="@+id/ivFotoInmueble"
+        android:layout_width="390dp"
+        android:layout_height="142dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -27,6 +38,24 @@ tools:context=".ui.ui.inmuebles.DetalleInmuebleFragment">
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/etCodigoInmueble"
+        android:layout_width="145dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="12dp"
+        android:clickable="false"
+
+        android:ems="10"
+        android:enabled="false"
+        android:focusableInTouchMode="false"
+        android:fontFamily="sans-serif-light"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:textColor="#FFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
@@ -38,6 +67,22 @@ tools:context=".ui.ui.inmuebles.DetalleInmuebleFragment">
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etAmbientesInmueble"
+        android:layout_width="166dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+
+        android:ems="10"
+        android:enabled="false"
+        android:fontFamily="sans-serif-light"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:textColor="#FFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
         android:id="@+id/textView4"
@@ -52,11 +97,26 @@ tools:context=".ui.ui.inmuebles.DetalleInmuebleFragment">
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etCodigoInmueble" />
 
+    <EditText
+        android:id="@+id/etDireccionInmueble"
+        android:layout_width="153dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:enabled="false"
+        android:fontFamily="sans-serif-light"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:textColor="#FFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="132dp"
         android:fontFamily="sans-serif-light"
         android:text="Precio"
@@ -64,6 +124,21 @@ tools:context=".ui.ui.inmuebles.DetalleInmuebleFragment">
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etAmbientesInmueble" />
+
+    <EditText
+        android:id="@+id/etPrecioInmueble"
+        android:layout_width="160dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:enabled="false"
+        android:fontFamily="sans-serif-light"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:textColor="#FFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/textView6"
@@ -77,6 +152,21 @@ tools:context=".ui.ui.inmuebles.DetalleInmuebleFragment">
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etDireccionInmueble" />
+
+    <EditText
+        android:id="@+id/etUsoInmueble"
+        android:layout_width="158dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:enabled="false"
+        android:fontFamily="sans-serif-light"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:textColor="#FFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <TextView
         android:id="@+id/textView7"
@@ -92,89 +182,10 @@ tools:context=".ui.ui.inmuebles.DetalleInmuebleFragment">
         app:layout_constraintTop_toBottomOf="@+id/etPrecioInmueble" />
 
     <EditText
-        android:id="@+id/etCodigoInmueble"
-        android:layout_width="145dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="28dp"
-        android:clickable="false"
-
-        android:ems="10"
-        android:enabled="false"
-        android:focusableInTouchMode="false"
-        android:fontFamily="sans-serif-light"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:textColor="#FFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <EditText
-        android:id="@+id/etAmbientesInmueble"
-        android:layout_width="166dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-
-        android:ems="10"
-        android:enabled="false"
-        android:fontFamily="sans-serif-light"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:textColor="#FFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <EditText
-        android:id="@+id/etDireccionInmueble"
-        android:layout_width="153dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="20dp"
-        android:enabled="false"
-        android:ems="10"
-        android:fontFamily="sans-serif-light"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:textColor="#FFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-    <EditText
-        android:id="@+id/etPrecioInmueble"
-        android:layout_width="160dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="24dp"
-        android:ems="10"
-        android:enabled="false"
-        android:fontFamily="sans-serif-light"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:textColor="#FFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
-
-    <EditText
-        android:id="@+id/etUsoInmueble"
-        android:layout_width="158dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="20dp"
-        android:enabled="false"
-        android:ems="10"
-        android:fontFamily="sans-serif-light"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:textColor="#FFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-    <EditText
         android:id="@+id/etTipoInmueble"
         android:layout_width="162dp"
         android:layout_height="44dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:enabled="false"
         android:fontFamily="sans-serif-light"
@@ -182,26 +193,15 @@ tools:context=".ui.ui.inmuebles.DetalleInmuebleFragment">
         android:text="Name"
         android:textColor="#FFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.911"
+        app:layout_constraintHorizontal_bias="0.887"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
-    <ImageView
-        android:id="@+id/ivFotoInmueble"
-        android:layout_width="390dp"
-        android:layout_height="142dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/avatars" />
 
     <CheckBox
         android:id="@+id/cbDisponibleInmueble"
         android:layout_width="186dp"
         android:layout_height="49dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="40dp"
         android:backgroundTint="#FFFF"
         android:buttonTint="#FFFF"
         android:fontFamily="sans-serif-light"

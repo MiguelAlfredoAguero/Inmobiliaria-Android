@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.util.Log;
 
 import com.example.plantilla.modelo.*;
+import com.example.plantilla.modelo.auxiliar.Persona;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -163,7 +164,7 @@ public Propietario login(String mail, final String password){
         propietarios.add(sonia);
 
         //Inquilinos
-        Inquilino mario=new Inquilino(100,25340691L,"Mario","Luna","Aiello sup.","luna@mail.com","2664253411","Lucero Roberto","2664851422");
+        Inquilino mario=new Inquilino(100,25340691L,"Mario","Luna","Aiello sup.","luna@mail.com","2664253411","Lucero Roberto","2664851422", new Persona());
         inquilinos.add(mario);
 
         //Inmuebles
@@ -244,18 +245,30 @@ public Propietario login(String mail, final String password){
         @GET("Inmueble/{id}")
         Call<Inmueble> detalleInmueble(@Path("id") int groupId, @Header("Authorization") String token);
 
-        @PUT("Inmueble/edit")
-        Call<Inmueble> editInmueble(@Body Inmueble inmueble, @Header("Authorization") String token);
+        @PUT("Inmueble/{id}")
+        Call<Inmueble> editInmueble(@Path("id") int groupId, @Header("Authorization") String token);
+
+
+
+
+
+        //@GET("Inquilino")
+        //Call<List<Inmueble>> listaAlquileres( @Header("Authorization") String token );
+        @GET("Inquilino")
+        Call<List<Contrato>> listaAlquileres( @Header("Authorization") String token );
+
+        @GET("Inquilino/{id}")
+        Call<Inquilino> detalleAlquiler( @Path("id") int groupId, @Header("Authorization") String token );
 
 
 
 
 
         @GET("Contrato")
-        Call<List<Inmueble>> listaAlquileres( @Header("Authorization") String token );
+        Call<List<Contrato>> listaContratos( @Header("Authorization") String token );
 
         @GET("Contrato/{id}")
-        Call<Inquilino> detalleAlquiler( @Path("id") int groupId, @Header("Authorization") String token );
+        Call<Contrato> detalleContrato( @Path("id") int groupId, @Header("Authorization") String token );
 
     }
 

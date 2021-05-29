@@ -36,9 +36,9 @@ public class DetalleInmuebleViewModel extends AndroidViewModel {
         return detalleInmuebleMutable;
     }
 
-    public void cargarDetalleInmueble(int id) {
+    public void cargarDetalleInmueble(int InmuebleId) {
 
-        Call<Inmueble> detalleInmueble = ApiClient.getMyApiClient().detalleInmueble(id, ApiClient.obtenerToken(context));
+        Call<Inmueble> detalleInmueble = ApiClient.getMyApiClient().detalleInmueble(InmuebleId, ApiClient.obtenerToken(context));
         detalleInmueble.enqueue(new Callback<Inmueble>() {
             @Override
             public void onResponse(Call<Inmueble> call, Response<Inmueble> response) {
@@ -57,19 +57,9 @@ public class DetalleInmuebleViewModel extends AndroidViewModel {
 
 
     }
-    public void actualizarDetalleInmueble( Inmueble inmueble ) {
+    public void actualizarDetalleInmueble( int InmuebleId ) {
 
-        Call<Inmueble> editInmueble = ApiClient.getMyApiClient().editInmueble(inmueble, ApiClient.obtenerToken(context));
-
-        Log.d("msj", "Inmueble id  " + inmueble.getid());
-        Log.d("msj", "Inmueble direcion  " + inmueble.getDireccion());
-        Log.d("msj", "Inmueble uso  " + inmueble.getUsoInmueble());
-        Log.d("msj", "Inmueble tipo  " + inmueble.getTipoInmueble());
-        Log.d("msj", "Inmueble ambientes  " + inmueble.getAmbientes());
-        Log.d("msj", "Inmueble precio  " + inmueble.getPrecio());
-        //Log.d("msj", "Inmueble propietario  " + inmueble.getPropietario().getEmail());
-        Log.d("msj", "Inmueble estado  " + inmueble.isEstado());
-        Log.d("msj", "Inmueble avatar  " + inmueble.getavatar());
+        Call<Inmueble> editInmueble = ApiClient.getMyApiClient().editInmueble(InmuebleId, ApiClient.obtenerToken(context));
 
         editInmueble.enqueue(new Callback<Inmueble>() {
             @Override

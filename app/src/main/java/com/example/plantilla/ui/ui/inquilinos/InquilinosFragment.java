@@ -16,6 +16,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.example.plantilla.R;
+import com.example.plantilla.modelo.Contrato;
 import com.example.plantilla.modelo.Inmueble;
 import com.example.plantilla.modelo.Inquilino;
 
@@ -24,7 +25,7 @@ import java.util.List;
 public class InquilinosFragment extends Fragment {
 
     private InquilinosViewModel inquilinosViewModel;
-    private List<Inmueble> listaInmueblesAlquilados;
+    private List<Contrato> listaInmueblesAlquilados;
     private Inquilino inquilinoActual;
     private View root;
 
@@ -33,10 +34,10 @@ public class InquilinosFragment extends Fragment {
         inquilinosViewModel = new ViewModelProvider(this).get(InquilinosViewModel.class);
         root = inflater.inflate(R.layout.fragment_inquilinos, container, false);
 
-        inquilinosViewModel.getListaInmuebleMutable().observe(getViewLifecycleOwner(), new Observer<List<Inmueble>>() {
+        inquilinosViewModel.getListaInmuebleMutable().observe(getViewLifecycleOwner(), new Observer<List<Contrato>>() {
             @Override
-            public void onChanged(List<Inmueble> inmuebles) {
-                listaInmueblesAlquilados = inmuebles;
+            public void onChanged(List<Contrato> contratos) {
+                listaInmueblesAlquilados = contratos;
                 generarView(inflater, root);
             }
         });
@@ -56,7 +57,7 @@ public class InquilinosFragment extends Fragment {
     }
 
     private void generarView(LayoutInflater layoutInflater, View root) {
-        ArrayAdapter<Inmueble> arrayAdapter = new InquilinoAdapter(getContext(), R.layout.item_inquilino, listaInmueblesAlquilados, layoutInflater);
+        ArrayAdapter<Contrato> arrayAdapter = new InquilinoAdapter(getContext(), R.layout.item_inquilino, listaInmueblesAlquilados, layoutInflater);
         final ListView listView = root.findViewById(R.id.lvInmueblesAlquilados);
 
         listView.setAdapter(arrayAdapter);
@@ -66,16 +67,12 @@ public class InquilinosFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Inmueble inmueble = listaInmueblesAlquilados.get(position);
+                Contrato contrato = listaInmueblesAlquilados.get(position);
                 // el Id que viene en inmueble es el del contrato
-
-                //inquilinosViewModel.obtenerInquilino(inmueble);
 
                 Bundle bundle = new Bundle();
                 //bundle.putSerializable("inquilinoActual", inquilinoActual);
-                bundle.putInt("ContratoId", inmueble.getid());
-
-                Log.d("msj", "ContratoId " + inmueble.getid());
+                bundle.putInt("ContratoId", contrato.getInmueble().getId());
 
                 Navigation.findNavController(view).navigate(R.id.action_inquilinosFragment_to_detalleInquilinoFragment, bundle);
 

@@ -37,8 +37,7 @@ public class DetalleInmuebleFragment extends Fragment {
     public View onCreateView(@NonNull final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
 
-        int id = getArguments().getInt("id");
-
+        int InmuebleId = getArguments().getInt("InmuebleId");
 
         detalleInmuebleViewModel = new ViewModelProvider(this).get(DetalleInmuebleViewModel.class);
         root = inflater.inflate(R.layout.fragment_detalle_inmueble, container, false);
@@ -50,14 +49,14 @@ public class DetalleInmuebleFragment extends Fragment {
             public void onChanged(Inmueble inm) {
                 inmueble = new Inmueble();
                 inmueble = inm;
-                etCodigoInmueble.setText(inmueble.getid()+"");
+                etCodigoInmueble.setText(inmueble.getId()+"");
                 etAmbientesInmueble.setText(inmueble.getAmbientes()+"");
                 etDireccionInmueble.setText(inmueble.getDireccion());
                 etPrecioInmueble.setText(inmueble.getPrecio()+"");
                 etUsoInmueble.setText(inmueble.getUsoInmueble());
                 etTipoInmueble.setText(inmueble.getTipoInmueble());
 
-                cbDisponibleInmueble.setChecked(inmueble.isEstado());
+                cbDisponibleInmueble.setChecked(inmueble.isDisponible());
 
                 Glide.with(getContext())
                         .load("http://192.168.1.105:45455"+inmueble.getavatar())
@@ -67,7 +66,7 @@ public class DetalleInmuebleFragment extends Fragment {
             }
         });
 
-        detalleInmuebleViewModel.cargarDetalleInmueble(id);
+        detalleInmuebleViewModel.cargarDetalleInmueble(InmuebleId);
 
         return root;
     }
@@ -86,9 +85,9 @@ public class DetalleInmuebleFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                inmueble.setEstado(cbDisponibleInmueble.isChecked());
+                //inmueble.setDisponible(cbDisponibleInmueble.isChecked());
 
-                detalleInmuebleViewModel.actualizarDetalleInmueble(inmueble);
+                detalleInmuebleViewModel.actualizarDetalleInmueble(inmueble.getId());
 
                 Toast.makeText(getContext(), "Inmueble actualizado con exito.", Toast.LENGTH_LONG).show();
 
@@ -100,7 +99,7 @@ public class DetalleInmuebleFragment extends Fragment {
 
 
     ////////////////////////////
-
+/*
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -113,4 +112,6 @@ public class DetalleInmuebleFragment extends Fragment {
         super.onDestroyView();
         Log.d("msj", "onDestroyView ");
     }
+ */
+
 }

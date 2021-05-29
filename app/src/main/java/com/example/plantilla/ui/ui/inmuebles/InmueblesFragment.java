@@ -60,7 +60,7 @@ public class InmueblesFragment extends Fragment {
 
                 Bundle bundle = new Bundle();
                 //bundle.putSerializable("inmueble", inmueble);
-                bundle.putInt("id", inmueble.getid());
+                bundle.putInt("InmuebleId", inmueble.getId());
 
                 Navigation.findNavController(view).navigate(R.id.action_inmueblesFragment_to_detalleInmuebleFragment, bundle);
 

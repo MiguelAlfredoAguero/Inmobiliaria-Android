@@ -36,7 +36,8 @@ public class DetalleContratoFragment extends Fragment {
 
         inicializarComponentes(root);
 
-        contratoVigente = (Contrato) getArguments().getSerializable("contratoVigente");
+        int InmuebleId = getArguments().getInt("InmuebleId");
+
 
         detalleContratoViewModel.getContratoMutable().observe(getViewLifecycleOwner(), new Observer<Contrato>() {
             @Override
@@ -54,7 +55,7 @@ public class DetalleContratoFragment extends Fragment {
             }
         });
 
-        detalleContratoViewModel.cargarContratoVigente(contratoVigente);
+        detalleContratoViewModel.cargarContratoVigente(InmuebleId);
 
         return root;
     }

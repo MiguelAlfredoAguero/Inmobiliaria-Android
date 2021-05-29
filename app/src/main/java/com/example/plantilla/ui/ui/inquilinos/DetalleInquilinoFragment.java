@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -37,14 +38,14 @@ public class DetalleInquilinoFragment extends Fragment {
 
                 inquilinoActual = inquilino;
 
-                etCodigoInquilino.setText(inquilino.getId()+"");
+                etCodigoInquilino.setText(inquilino.getInquilinoId()+"");
                 etNombreInquilino.setText(inquilino.getNombre());
                 etApellidoInquilino.setText(inquilino.getApellido());
-                etDniInquilino.setText(inquilino.getDNI()+"");
+                etDniInquilino.setText(inquilino.getdni()+"");
                 etEmailInquilino.setText(inquilino.getEmail());
                 etTelefonoInquilino.setText(inquilino.getTelefono());
-                etGarante.setText(inquilino.getNombreGarante());
-                etTelefonoGarante.setText(inquilino.getTelefonoGarante());
+                etGarante.setText(inquilino.getGaranteNombre());
+                etTelefonoGarante.setText(inquilino.getGaranteTelefono());
             }
         });
 

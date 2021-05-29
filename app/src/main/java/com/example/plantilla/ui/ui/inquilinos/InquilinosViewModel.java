@@ -23,7 +23,7 @@ import retrofit2.Response;
 
 public class InquilinosViewModel extends AndroidViewModel {
 
-    private MutableLiveData<List<Inmueble>> listaInmuebleMutable;
+    private MutableLiveData<List<Contrato>> listaInmuebleMutable;
     private MutableLiveData<Inquilino> inquilinoMutable;
     private Context context;
 
@@ -32,7 +32,7 @@ public class InquilinosViewModel extends AndroidViewModel {
         context = application.getApplicationContext();
     }
 
-    public LiveData<List<Inmueble>> getListaInmuebleMutable () {
+    public LiveData<List<Contrato>> getListaInmuebleMutable () {
         if ( listaInmuebleMutable == null ) {
             listaInmuebleMutable = new MutableLiveData<>();
         }
@@ -48,19 +48,19 @@ public class InquilinosViewModel extends AndroidViewModel {
 
     public void cargarInmueblesAlquilados() {
 
-        Call<List<Inmueble>> listaAlquileres = ApiClient.getMyApiClient().listaAlquileres(ApiClient.obtenerToken(context));
-        listaAlquileres.enqueue(new Callback<List<Inmueble>>() {
+        Call<List<Contrato>> listaAlquileres = ApiClient.getMyApiClient().listaAlquileres(ApiClient.obtenerToken(context));
+        listaAlquileres.enqueue(new Callback<List<Contrato>>() {
             @Override
-            public void onResponse(Call<List<Inmueble>> call, Response<List<Inmueble>> response) {
+            public void onResponse(Call<List<Contrato>> call, Response<List<Contrato>> response) {
                 if ( response.isSuccessful() ) {
-                    listaInmuebleMutable.setValue(response.body());
+                    listaInmuebleMutable.postValue(response.body());
                 } else {
                     Log.d("msj", "cargarInmueblesAlquilados(): No encontrado.");
                 }
             }
 
             @Override
-            public void onFailure(Call<List<Inmueble>> call, Throwable t) {
+            public void onFailure(Call<List<Contrato>> call, Throwable t) {
                 Log.d("msj", "OCURRIO ALGUN ERROR.");
             }
         });

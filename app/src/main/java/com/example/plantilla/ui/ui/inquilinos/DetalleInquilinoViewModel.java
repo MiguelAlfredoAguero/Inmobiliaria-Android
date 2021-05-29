@@ -39,12 +39,13 @@ public class DetalleInquilinoViewModel extends AndroidViewModel {
 
     public void cargarDetalleAlquiler(int contratoId) {
 
+        Log.d("msj", "ContradoId: " + contratoId);
+
         Call<Inquilino> detalleAlquiler = ApiClient.getMyApiClient().detalleAlquiler(contratoId, ApiClient.obtenerToken(context));
         detalleAlquiler.enqueue(new Callback<Inquilino>() {
             @Override
             public void onResponse(Call<Inquilino> call, Response<Inquilino> response) {
                 if ( response.isSuccessful() ) {
-                    Log.d("msj", response.body().getId()+"");
                     detalleInquilinoMutable.setValue(response.body());
                 } else {
                     Log.d("msj", "cargarDetalleAlquiler(): No encontrado.");

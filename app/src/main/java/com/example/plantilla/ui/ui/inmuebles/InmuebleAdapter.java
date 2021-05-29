@@ -50,7 +50,6 @@ public class InmuebleAdapter extends ArrayAdapter<Inmueble> {
         ImageView fotoInmueble = itemView.findViewById(R.id.ivFotoInmuebleL);
         TextView tvDireccion = itemView.findViewById(R.id.tvDireccionInmuebleL);
         TextView tvPrecio = itemView.findViewById(R.id.tvPrecioInmuebleL);
-        TextView tvAmbientes = itemView.findViewById(R.id.tvAmbientesInmuebleL);
 
         Glide.with(getContext())
                 .load("http://192.168.1.105:45455"+inmueble.getavatar())
@@ -61,7 +60,6 @@ public class InmuebleAdapter extends ArrayAdapter<Inmueble> {
 
         tvDireccion.setText(inmueble.getDireccion());
         tvPrecio.setText(inmueble.getPrecio()+"");
-        tvAmbientes.setText(inmueble.getAmbientes()+"");
 
         return itemView;
     }
