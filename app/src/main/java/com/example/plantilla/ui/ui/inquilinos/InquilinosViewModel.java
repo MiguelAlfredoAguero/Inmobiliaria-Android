@@ -24,7 +24,6 @@ import retrofit2.Response;
 public class InquilinosViewModel extends AndroidViewModel {
 
     private MutableLiveData<List<Contrato>> listaInmuebleMutable;
-    private MutableLiveData<Inquilino> inquilinoMutable;
     private Context context;
 
     public InquilinosViewModel(@NonNull Application application) {
@@ -37,12 +36,6 @@ public class InquilinosViewModel extends AndroidViewModel {
             listaInmuebleMutable = new MutableLiveData<>();
         }
         return listaInmuebleMutable;
-    }
-    public LiveData<Inquilino> getInquilinoMutable () {
-        if ( inquilinoMutable == null ) {
-            inquilinoMutable = new MutableLiveData<>();
-        }
-        return inquilinoMutable;
     }
 
 
@@ -65,7 +58,6 @@ public class InquilinosViewModel extends AndroidViewModel {
             }
         });
 
-
         /*
         ApiClient api = ApiClient.getApi();
         List<Inmueble> inmuebleList = api.obtenerPropiedadesAlquiladas();
@@ -73,12 +65,5 @@ public class InquilinosViewModel extends AndroidViewModel {
         */
     }
 
-    /*
-    public void obtenerInquilino(Inmueble inmueble) {
-        ApiClient api = ApiClient.getApi();
-        Inquilino inquilino = api.obtenerInquilino(inmueble);
-        inquilinoMutable.setValue(inquilino);
-    }
-    */
 
 }

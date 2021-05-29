@@ -30,7 +30,6 @@ public class PagosFragment extends Fragment {
 
     private PagosViewModel pagosViewModel;
     private List<Pago> listaPagos;
-    private Contrato contratoVigente;
     private View root;
 
     public View onCreateView(@NonNull final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -38,7 +37,8 @@ public class PagosFragment extends Fragment {
         pagosViewModel = new ViewModelProvider(this).get(PagosViewModel.class);
         root = inflater.inflate(R.layout.fragment_pagos, container, false);
 
-        contratoVigente = (Contrato) getArguments().getSerializable("contratoVigente");
+        //contratoVigente = (Contrato) getArguments().getSerializable("contratoVigente");
+        int ContratoId = getArguments().getInt("ContratoId");
 
         pagosViewModel.getListaPagosMutable().observe(getViewLifecycleOwner(), new Observer<List<Pago>>() {
             @Override
@@ -48,7 +48,7 @@ public class PagosFragment extends Fragment {
             }
         });
 
-        pagosViewModel.cargarPagos(contratoVigente);
+        pagosViewModel.cargarPagos(ContratoId);
 
         return root;
     }

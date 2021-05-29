@@ -26,7 +26,6 @@ public class InquilinosFragment extends Fragment {
 
     private InquilinosViewModel inquilinosViewModel;
     private List<Contrato> listaInmueblesAlquilados;
-    private Inquilino inquilinoActual;
     private View root;
 
     public View onCreateView(@NonNull final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -41,17 +40,8 @@ public class InquilinosFragment extends Fragment {
                 generarView(inflater, root);
             }
         });
-        inquilinosViewModel.getInquilinoMutable().observe(getViewLifecycleOwner(), new Observer<Inquilino>() {
-            @Override
-            public void onChanged(Inquilino inquilino) {
-                inquilinoActual = inquilino;
-            }
-        });
-
-
 
         inquilinosViewModel.cargarInmueblesAlquilados();
-
 
         return root;
     }
@@ -72,7 +62,7 @@ public class InquilinosFragment extends Fragment {
 
                 Bundle bundle = new Bundle();
                 //bundle.putSerializable("inquilinoActual", inquilinoActual);
-                bundle.putInt("ContratoId", contrato.getInmueble().getId());
+                bundle.putInt("ContratoId", contrato.getId());
 
                 Navigation.findNavController(view).navigate(R.id.action_inquilinosFragment_to_detalleInquilinoFragment, bundle);
 

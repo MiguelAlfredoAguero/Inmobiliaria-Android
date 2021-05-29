@@ -23,7 +23,6 @@ import retrofit2.Response;
 
 public class ContratosVigentesViewModel extends AndroidViewModel {
     private MutableLiveData <List<Contrato>> listaInmueblesMutable;
-    private MutableLiveData <Contrato> contratoMutable;
     private Context context;
 
     public ContratosVigentesViewModel(@NonNull Application application) {
@@ -37,12 +36,7 @@ public class ContratosVigentesViewModel extends AndroidViewModel {
         }
         return listaInmueblesMutable;
     }
-    public LiveData<Contrato> getContratoMutable() {
-        if ( contratoMutable == null) {
-            contratoMutable = new MutableLiveData<>();
-        }
-        return contratoMutable;
-    }
+
 
     public void cargarInmueblesAlquilados() {
 
@@ -51,13 +45,15 @@ public class ContratosVigentesViewModel extends AndroidViewModel {
             @Override
             public void onResponse(Call<List<Contrato>> call, Response<List<Contrato>> response) {
                 if ( response.isSuccessful() ) {
-                    listaInmueblesMutable.setValue(response.body());
+                    listaInmueblesMutable.postValue(response.body());
+                } else {
+                    Log.d("msj", "cargarInmueblesAlquilados(): No encontrado.");
                 }
             }
 
             @Override
             public void onFailure(Call<List<Contrato>> call, Throwable t) {
-
+                Log.d("msj", "OCURRIO ALGUN ERROR.");
             }
         });
 
@@ -68,34 +64,5 @@ public class ContratosVigentesViewModel extends AndroidViewModel {
         */
     }
 
-
-    /*
-    public void obtenerContrato(Inmueble inmueble) {
-
-        Call<Contrato> detalleContrato = ApiClient.getMyApiClient().detalleContrato(inmueble.getid(), ApiClient.obtenerToken(context));
-        detalleContrato.enqueue(new Callback<Contrato>() {
-            @Override
-            public void onResponse(Call<Contrato> call, Response<Contrato> response) {
-                if ( response.isSuccessful() ) {
-                    Log.d("msj", "Id del contrato ViewModel " + response.body().getContratoId());
-                    contratoMutable.setValue(response.body());
-                } else {
-                    Log.d("msj", "Contrato no encontrado " );
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Contrato> call, Throwable t) {
-                Log.d("msj", "OCURRIO ALGUN ERROR " );
-            }
-        });
-
-
-        ApiClient apiClient = ApiClient.getApi();
-        Contrato contrato = apiClient.obtenerContratoVigente(inmueble);
-        contratoMutable.setValue(contrato);
-
-    }
-    */
 
 }

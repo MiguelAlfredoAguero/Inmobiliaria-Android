@@ -5,53 +5,53 @@ import java.util.Objects;
 
 public class Contrato implements Serializable {
 
-    private int ContratoId;
-    private String fechaInicio;
-    private String fechaFin;
-    private double montoAlquiler;
+    private int id;
+    private String desde;
+    private String hasta;
+    private double precio;
     private Inquilino inquilino;
     private Inmueble inmueble;
 
     public Contrato() {}
-    public Contrato(int ContratoId, String fechaInicio, String fechaFin, double montoAlquiler, Inquilino inquilino, Inmueble inmueble) {
-        this.ContratoId = ContratoId;
-        this.fechaInicio = fechaInicio;
-        this.fechaFin = fechaFin;
-        this.montoAlquiler = montoAlquiler;
+    public Contrato(int id, String desde, String hasta, double precio, Inquilino inquilino, Inmueble inmueble) {
+        this.id = id;
+        this.desde = desde;
+        this.hasta = hasta;
+        this.precio = precio;
         this.inquilino = inquilino;
         this.inmueble = inmueble;
     }
 
-    public int getContratoId() {
-        return ContratoId;
+    public int getId() {
+        return id;
     }
 
-    public void setContratoId(int ContratoId) {
-        this.ContratoId = ContratoId;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getFechaInicio() {
-        return fechaInicio;
+    public String getDesde() {
+        return desde;
     }
 
-    public void setFechaInicio(String fechaInicio) {
-        this.fechaInicio = fechaInicio;
+    public void setDesde(String desde) {
+        this.desde = desde;
     }
 
-    public String getFechaFin() {
-        return fechaFin;
+    public String getHasta() {
+        return hasta;
     }
 
-    public void setFechaFin(String fechaFin) {
-        this.fechaFin = fechaFin;
+    public void setHasta(String hasta) {
+        this.hasta = hasta;
     }
 
-    public double getMontoAlquiler() {
-        return montoAlquiler;
+    public double getPrecio() {
+        return precio;
     }
 
-    public void setMontoAlquiler(double montoAlquiler) {
-        this.montoAlquiler = montoAlquiler;
+    public void setPrecio(double precio) {
+        this.precio = precio;
     }
 
 
@@ -76,11 +76,11 @@ public class Contrato implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Contrato contrato = (Contrato) o;
-        return ContratoId == contrato.ContratoId;
+        return id == contrato.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ContratoId);
+        return Objects.hash(id);
     }
 }

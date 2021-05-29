@@ -34,9 +34,9 @@ public class DetalleContratoViewModel extends AndroidViewModel {
         return contratoMutable;
     }
 
-    public void cargarContratoVigente(int InmuebleId) {
+    public void cargarContratoVigente(int ContratoId) {
 
-        Call<Contrato> detalleContrato = ApiClient.getMyApiClient().detalleContrato(InmuebleId, ApiClient.obtenerToken(context));
+        Call<Contrato> detalleContrato = ApiClient.getMyApiClient().detalleContrato(ContratoId, ApiClient.obtenerToken(context));
         detalleContrato.enqueue(new Callback<Contrato>() {
             @Override
             public void onResponse(Call<Contrato> call, Response<Contrato> response) {

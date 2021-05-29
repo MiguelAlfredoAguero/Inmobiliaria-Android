@@ -184,11 +184,9 @@ public Propietario login(String mail, final String password){
         Contrato uno=new Contrato(701, "05/01/2020","05/01/2021",17000,mario,otraCasa);
         contratos.add(uno);
         //Pagos
-        pagos.add(new Pago(900,1,uno,17000,"10/02/2020"));
-        pagos.add(new Pago(901,2,uno,17000,"10/03/2020"));
-        pagos.add(new Pago(902,3,uno,17000,"10/04/2020"));
-
-
+        pagos.add(new Pago(900,1,"10/02/2020",17000, uno));
+        pagos.add(new Pago(901,2,"10/03/2020",17000, uno));
+        pagos.add(new Pago(902,3,"10/04/2020",17000, uno));
 
 
     }
@@ -252,8 +250,6 @@ public Propietario login(String mail, final String password){
 
 
 
-        //@GET("Inquilino")
-        //Call<List<Inmueble>> listaAlquileres( @Header("Authorization") String token );
         @GET("Inquilino")
         Call<List<Contrato>> listaAlquileres( @Header("Authorization") String token );
 
@@ -269,6 +265,13 @@ public Propietario login(String mail, final String password){
 
         @GET("Contrato/{id}")
         Call<Contrato> detalleContrato( @Path("id") int groupId, @Header("Authorization") String token );
+
+
+
+
+
+        @GET("Pago/{id}")
+        Call<List<Pago>> listaPagos( @Path("id") int groupId, @Header("Authorization") String token );
 
     }
 

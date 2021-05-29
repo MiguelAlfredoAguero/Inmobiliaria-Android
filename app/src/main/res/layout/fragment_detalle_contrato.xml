@@ -17,92 +17,97 @@
             android:id="@+id/etCodigoContrato"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="56dp"
+            android:layout_marginTop="16dp"
             android:ems="10"
             android:enabled="false"
             android:inputType="textPersonName"
             android:text=""
-            android:textAlignment="center"
+            android:textAlignment="textStart"
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.38"
+            app:layout_constraintStart_toEndOf="@+id/textView11"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/etFInicioContrato"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="56dp"
+            android:layout_marginTop="4dp"
             android:ems="10"
             android:enabled="false"
             android:inputType="textPersonName"
             android:text=""
-            android:textAlignment="center"
+            android:textAlignment="textStart"
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.17"
+            app:layout_constraintStart_toEndOf="@+id/textView20"
             app:layout_constraintTop_toBottomOf="@+id/etCodigoContrato" />
 
         <EditText
             android:id="@+id/etFFinContrato"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="56dp"
+            android:layout_marginTop="8dp"
             android:ems="10"
             android:enabled="false"
             android:inputType="textPersonName"
             android:text=""
-            android:textAlignment="center"
+            android:textAlignment="textStart"
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.29"
+            app:layout_constraintStart_toEndOf="@+id/textView21"
             app:layout_constraintTop_toBottomOf="@+id/etFInicioContrato" />
 
         <EditText
             android:id="@+id/etMontoContrato"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="52dp"
+            android:layout_marginTop="8dp"
             android:ems="10"
             android:enabled="false"
             android:inputType="textPersonName"
             android:text=""
-            android:textAlignment="center"
+            android:textAlignment="textStart"
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.402"
+            app:layout_constraintStart_toEndOf="@+id/textView22"
             app:layout_constraintTop_toBottomOf="@+id/etFFinContrato" />
 
         <EditText
             android:id="@+id/etInquilinoContrato"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="52dp"
+            android:layout_marginTop="8dp"
             android:ems="10"
             android:enabled="false"
             android:inputType="textPersonName"
             android:text=""
-            android:textAlignment="center"
+            android:textAlignment="textStart"
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.336"
+            app:layout_constraintStart_toEndOf="@+id/textView23"
             app:layout_constraintTop_toBottomOf="@+id/etMontoContrato" />
 
         <EditText
             android:id="@+id/etInmuebleContrato"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="52dp"
+            android:layout_marginTop="8dp"
             android:ems="10"
             android:enabled="false"
             android:inputType="textPersonName"
             android:text=""
+            android:textAlignment="textStart"
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etInquilinoContrato"
-            android:textAlignment="center" />
+            app:layout_constraintHorizontal_bias="0.302"
+            app:layout_constraintStart_toEndOf="@+id/textView24"
+            app:layout_constraintTop_toBottomOf="@+id/etInquilinoContrato" />
 
         <Button
             android:id="@+id/btnPagosContrato"
@@ -121,11 +126,11 @@
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
             android:text="Codigo"
             android:textColor="#FFFFFF"
             android:textSize="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/etCodigoContrato"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -133,61 +138,61 @@
             android:id="@+id/textView20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
             android:text="Fecha Inicio"
             android:textColor="#FFFFFF"
             android:textSize="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/etFInicioContrato"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etCodigoContrato" />
+            app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
         <TextView
             android:id="@+id/textView21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="28dp"
             android:text="Fecha Fin"
             android:textColor="#FFFFFF"
             android:textSize="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/etFFinContrato"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etFInicioContrato" />
+            app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
         <TextView
             android:id="@+id/textView22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
             android:text="Monto"
             android:textColor="#FFFFFF"
             android:textSize="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/etMontoContrato"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etFFinContrato" />
+            app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
         <TextView
             android:id="@+id/textView23"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="28dp"
             android:text="Inquilino"
             android:textColor="#FFFFFF"
             android:textSize="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/etInquilinoContrato"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etMontoContrato" />
+            app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
         <TextView
             android:id="@+id/textView24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
             android:text="Inmueble"
             android:textColor="#FFFFFF"
             android:textSize="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/etInmuebleContrato"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etInquilinoContrato" />
+            app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

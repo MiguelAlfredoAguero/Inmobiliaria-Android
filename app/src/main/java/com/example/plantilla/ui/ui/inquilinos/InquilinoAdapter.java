@@ -16,7 +16,6 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.plantilla.R;
 import com.example.plantilla.modelo.Contrato;
-import com.example.plantilla.modelo.Inmueble;
 
 import java.util.List;
 
@@ -46,7 +45,7 @@ public class InquilinoAdapter extends ArrayAdapter<Contrato> {
 
         ImageView fotoInmueble = itemView.findViewById(R.id.ivFotoInmuebleL);
         TextView tvDireccion = itemView.findViewById(R.id.tvDireccionInmuebleL);
-        EditText etInquilino = itemView.findViewById(R.id.etInquilino);
+        EditText etInquilino = itemView.findViewById(R.id.etContratoId);
 
         Glide.with(getContext())
                 .load("http://192.168.1.105:45455"+contrato.getInmueble().getavatar())

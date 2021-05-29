@@ -29,7 +29,6 @@ public class ContratosVigentesFragment extends Fragment {
 
     private ContratosVigentesViewModel contratosVigentesViewModel;
     private List<Contrato> listaInmueblesAlquilados;
-    private Contrato contratoVigente;
     private View root;
 
     public View onCreateView(@NonNull final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -44,12 +43,7 @@ public class ContratosVigentesFragment extends Fragment {
                 generarView(inflater, root);
             }
         });
-        contratosVigentesViewModel.getContratoMutable().observe(getViewLifecycleOwner(), new Observer<Contrato>() {
-            @Override
-            public void onChanged(Contrato contrato) {
-                contratoVigente = contrato;
-            }
-        });
+
 
         contratosVigentesViewModel.cargarInmueblesAlquilados();
 
@@ -59,7 +53,7 @@ public class ContratosVigentesFragment extends Fragment {
 
     private void generarView(LayoutInflater layoutInflater, View root) {
         // Estamos reutilizando la vista del item inquilino y su adapter
-        ArrayAdapter<Contrato> arrayAdapter = new InquilinoAdapter(getContext(), R.layout.item_inquilino, listaInmueblesAlquilados, layoutInflater);
+        ArrayAdapter<Contrato> arrayAdapter = new ContratoAdapter(getContext(), R.layout.item_contrato, listaInmueblesAlquilados, layoutInflater);
         final ListView listView = root.findViewById(R.id.lvContratosVigentes);
 
         listView.setAdapter(arrayAdapter);
@@ -69,13 +63,13 @@ public class ContratosVigentesFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Contrato inmueble = listaInmueblesAlquilados.get(position);
+                Contrato contrato = listaInmueblesAlquilados.get(position);
 
                 //contratosVigentesViewModel.obtenerContrato(inmueble);
 
                 Bundle bundle = new Bundle();
                 //bundle.putSerializable("contratoVigente", contratoVigente);
-                bundle.putInt("InmuebleId", inmueble.getInmueble().getId());
+                bundle.putInt("ContratoId", contrato.getId());
 
                 Navigation.findNavController(view).navigate(R.id.action_contratosVigentesFragment_to_detalleContratoFragment, bundle);
 

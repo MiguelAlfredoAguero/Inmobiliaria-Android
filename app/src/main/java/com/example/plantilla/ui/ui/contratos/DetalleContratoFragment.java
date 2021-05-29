@@ -36,7 +36,7 @@ public class DetalleContratoFragment extends Fragment {
 
         inicializarComponentes(root);
 
-        int InmuebleId = getArguments().getInt("InmuebleId");
+        int ContratoId = getArguments().getInt("ContratoId");
 
 
         detalleContratoViewModel.getContratoMutable().observe(getViewLifecycleOwner(), new Observer<Contrato>() {
@@ -45,17 +45,17 @@ public class DetalleContratoFragment extends Fragment {
 
                 contratoVigente = contrato;
 
-                etCodigoContrato.setText(contrato.getContratoId()+"");
-                etFInicioContrato.setText(contrato.getFechaInicio());
-                etFFinContrato.setText(contrato.getFechaFin());
-                etMontoContrato.setText(contrato.getMontoAlquiler()+"");
-                etInquilinoContrato.setText(contrato.getInquilino().getApellido() +" "+contrato.getInquilino().getNombre());
+                etCodigoContrato.setText(contrato.getId()+"");
+                etFInicioContrato.setText(contrato.getDesde());
+                etFFinContrato.setText(contrato.getHasta());
+                etMontoContrato.setText(contrato.getPrecio()+"");
+                etInquilinoContrato.setText(contrato.getInquilino().getPersona().getApellido() +" "+contrato.getInquilino().getPersona().getNombre());
                 etInmuebleContrato.setText("Inmueble en: " + contrato.getInmueble().getDireccion());
 
             }
         });
 
-        detalleContratoViewModel.cargarContratoVigente(InmuebleId);
+        detalleContratoViewModel.cargarContratoVigente(ContratoId);
 
         return root;
     }
@@ -74,7 +74,9 @@ public class DetalleContratoFragment extends Fragment {
             public void onClick(View v) {
 
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("contratoVigente", contratoVigente);
+                //bundle.putSerializable("contratoVigente", contratoVigente);
+                int ContratoId = Integer.parseInt(etCodigoContrato.getText().toString());
+                bundle.putInt("ContratoId", ContratoId);
 
                 Navigation.findNavController(v).navigate(R.id.action_detalleContratoFragment_to_pagosFragment, bundle);
             }

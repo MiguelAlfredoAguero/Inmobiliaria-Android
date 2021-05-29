@@ -47,11 +47,11 @@ public class PagoAdapter extends ArrayAdapter<Pago> {
         TextView tvImportePago = itemView.findViewById(R.id.tvImportePago);
         TextView tvFechaPago = itemView.findViewById(R.id.tvFechaPago);
 
-        tvCodigoPago.setText(pago.getIdPago()+"");
+        tvCodigoPago.setText(pago.getId()+"");
         tvNumeroPago.setText(pago.getNumero()+"");
-        tvCodigoContratoPago.setText(pago.getContrato().getContratoId()+"");
+        tvCodigoContratoPago.setText(pago.getContrato().getId()+"");
         tvImportePago.setText(pago.getImporte()+"");
-        tvFechaPago.setText(pago.getFechaDePago());
+        tvFechaPago.setText(pago.getFecha());
 
         return itemView;
     }
