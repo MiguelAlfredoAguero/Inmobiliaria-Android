@@ -199,7 +199,9 @@ public Propietario login(String mail, final String password){
 
     //////////////////////////////////////////////////////////////
 
-    private static final String PATH="http://192.168.1.105:45455/api/";
+    //private static final String PATH="http://192.168.1.105:45455/api/";
+    public static final String SERVER = "http://192.168.1.105:45455";
+    private static final String PATH=SERVER+"/api/";
     private static  MyApiInterface myApiInteface;
 
     public static MyApiInterface getMyApiClient(){

@@ -18,6 +18,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.plantilla.R;
 import com.example.plantilla.modelo.Inmueble;
+import com.example.plantilla.request.ApiClient;
 
 import org.w3c.dom.Text;
 
@@ -52,10 +53,11 @@ public class InmuebleAdapter extends ArrayAdapter<Inmueble> {
         TextView tvPrecio = itemView.findViewById(R.id.tvPrecioInmuebleL);
 
         Glide.with(getContext())
-                .load("http://192.168.1.105:45455"+inmueble.getavatar())
+                .load(ApiClient.SERVER+inmueble.getavatar())
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                //.placeholder(@Drawable.) colocar aqui una imagen por defecto
                 .into(fotoInmueble);
+
+        //.placeholder(@Drawable.) colocar aqui una imagen por defecto
 
 
         tvDireccion.setText(inmueble.getDireccion());

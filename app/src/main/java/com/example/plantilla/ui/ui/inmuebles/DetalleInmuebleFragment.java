@@ -21,6 +21,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.plantilla.R;
 import com.example.plantilla.modelo.Inmueble;
+import com.example.plantilla.request.ApiClient;
 
 import java.io.Serializable;
 import java.util.List;
@@ -59,8 +60,9 @@ public class DetalleInmuebleFragment extends Fragment {
                 cbDisponibleInmueble.setChecked(inmueble.isDisponible());
 
                 Glide.with(getContext())
-                        .load("http://192.168.1.105:45455"+inmueble.getavatar())
+                        .load(ApiClient.SERVER+inmueble.getavatar())
                         .diskCacheStrategy(DiskCacheStrategy.ALL)
+                        //.placeholder(@Drawable.) colocar aqui una imagen por defecto
                         .into(ivFotoInmueble);
 
             }
@@ -85,8 +87,6 @@ public class DetalleInmuebleFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                //inmueble.setDisponible(cbDisponibleInmueble.isChecked());
-
                 detalleInmuebleViewModel.actualizarDetalleInmueble(inmueble.getId());
 
                 Toast.makeText(getContext(), "Inmueble actualizado con exito.", Toast.LENGTH_LONG).show();
@@ -96,22 +96,5 @@ public class DetalleInmuebleFragment extends Fragment {
 
     }
 
-
-
-    ////////////////////////////
-/*
-    @Override
-    public void onSaveInstanceState(@NonNull Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putSerializable("inmueble", inmueble);
-    }
-
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        Log.d("msj", "onDestroyView ");
-    }
- */
 
 }

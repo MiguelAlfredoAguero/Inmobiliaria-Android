@@ -16,6 +16,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.plantilla.R;
 import com.example.plantilla.modelo.Contrato;
+import com.example.plantilla.request.ApiClient;
 
 import java.util.List;
 
@@ -47,12 +48,12 @@ public class ContratoAdapter extends ArrayAdapter<Contrato> {
         EditText etContratoId = itemView.findViewById(R.id.etContratoId);
 
         Glide.with(getContext())
-                .load("http://192.168.1.105:45455"+contrato.getInmueble().getavatar())
+                .load(ApiClient.SERVER+contrato.getInmueble().getavatar())
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
+                //.placeholder(@Drawable.) colocar aqui una imagen por defecto
                 .into(fotoInmueble);
 
         tvDireccion.setText(contrato.getInmueble().getDireccion());
-        //etInquilino.setText(contrato.getInquilino().getPersona().getApellido() + " " + contrato.getInquilino().getPersona().getNombre());
         etContratoId.setText("Nº " + contrato.getId());
 
         return itemView;
